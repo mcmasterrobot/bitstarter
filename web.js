@@ -5,15 +5,18 @@ var app = express.createServer(express.logger());
 
 var fs = require('fs');
 var buffer = new Buffer(64);
+var fileData; 
+
 app.get('/', function(request, response) {
 
  
   fs.readFile('index.html', function(err,data){
         if (err) throw err;
      buffer.write(data);
-    
+    fileData=data;
+
    });
- response.send(buffer.toString());
+ response.send(fileData);
 
 });
 
