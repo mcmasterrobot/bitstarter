@@ -12,7 +12,8 @@ app.get('/', function(request, response) {
         if (err) throw err;
 
 
-       response.send(data.toString);
+
+       response.send(data);
    });
 
 });
