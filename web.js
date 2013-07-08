@@ -12,11 +12,11 @@ app.get('/', function(request, response) {
  
   fs.readFile('index.html', function(err,data){
         if (err) throw err;
-     buffer.write(data);
-   
-
+     response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(data);
+      response.end();
    });
- response.send(buffer.toString('utf-8'));
+
 
 });
 
