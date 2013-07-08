@@ -11,8 +11,9 @@ app.get('/', function(request, response) {
   fs.readFile('index.html', function(err,data){
         if (err) throw err;
      buffer.write(data);
-     response.send(buffer.toString());
+    
    });
+ response.send(buffer.toString());
 
 });
 
